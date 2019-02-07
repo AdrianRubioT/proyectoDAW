@@ -1,6 +1,6 @@
 <?php
 
-    $numElementos = 3;
+    $numElementos = 8;
     
     //inicializar variable si no se especifica
     $pagina = 1;
