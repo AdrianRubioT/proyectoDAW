@@ -3,7 +3,7 @@ body{
      margin:0;
 }
 
-a{
+#menu a{
     color:white;
     text-decoration:none;
 }
@@ -115,12 +115,14 @@ a{
 }
 
 .juego{
+    width: 25%;
     height: 250px;
     flex-basis: 20%;
     -ms-flex: auto;
-    width: 259px;
+    
     position: relative;
     padding: 10px;
     box-sizing: border-box;
     border:solid 1px black;
 }
+
