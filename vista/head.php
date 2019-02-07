@@ -5,6 +5,13 @@
 
 
 <!--<script src="main.js"></script>-->
-<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="styles/menu.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="styles/listarJuegos.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="styles/paginacion.css" />
+
+
+
+
 
 
