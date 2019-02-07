@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" media="screen" href="styles/menu.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="styles/listarJuegos.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="styles/paginacion.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="styles/juego.css" />
 
 
 
