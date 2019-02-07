@@ -17,13 +17,16 @@
         <!--menu-->
         <?php require_once("vista/menu/menu.php")?>
         
+        
+        
         <!--listado de juegos-->
-        <?php require_once("controlador/juegos/listarJuegos.php")?>
+        <div id="grid-row">
+            <?php require_once("controlador/juegos/listarJuegos.php")?>
+        </div>
         
         <!--paginacion de las paginas -->
-        
         <div id="paginacion">
-        <?php require("controlador/juegos/paginacion.php"); ?>
+            <?php require("controlador/juegos/paginacion.php"); ?>
         </div>
         
         
