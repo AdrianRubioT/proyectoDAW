@@ -21,8 +21,10 @@
         <?php require_once("controlador/juegos/listarJuegos.php")?>
         
         <!--paginacion de las paginas -->
-        <?php require("controlador/juegos/paginacion.php"); ?>
         
+        <div id="paginacion">
+        <?php require("controlador/juegos/paginacion.php"); ?>
+        </div>
         
         
     </body>
