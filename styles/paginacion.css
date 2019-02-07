@@ -1,3 +1,11 @@
+
 #paginacion{
+    text-align: center;
+    font-size:20px;
+}
+
+#paginacion * {
+    display: inline-block;
+    margin: 10px;
     
 }
