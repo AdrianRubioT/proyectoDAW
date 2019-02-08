@@ -4,11 +4,8 @@
 }
 
 #menu #linea1, #menu #linea2{
+    
     width:100%;
-   
-}
-
-#menu #linea1, #menu #linea2{
     
     display: flex;
     grid-template-columns: 0.5fr 1.5fr;
