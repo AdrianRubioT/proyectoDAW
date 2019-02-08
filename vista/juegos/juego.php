@@ -1,7 +1,7 @@
 
 <div class="juego">
     
-    <a href="jugar.php?ID_juego:<?php echo $ID_juego ?>">
+    <a href="jugar.php?ID_juego=<?php echo $ID_juego ?>">
     
         <div class="iconoJuego">
             <img src="contenido/<?php echo $ID_juego ."/". $imgJuego ?>">
