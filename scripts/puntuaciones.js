@@ -1,12 +1,12 @@
 
 var peticion_http = new XMLHttpRequest();
-var url = "http://18.224.32.38:8080/proyectoDAW/funciones/guardarPuntuacion.php";
 
-function cargar(){
+var ip = "18.224.32.38";
+var url = "http://"+ip+":8080/proyectoDAW/funciones/guardarPuntuacion.php";
 
-    enviarPuntuacion(4);
-    
-}
+// function cargar(){
+//     enviarPuntuacion(4);
+// }
 
 
 
@@ -14,25 +14,24 @@ function enviarPuntuacion(puntuacion){
     
     var ID_juego = getUrlVars()["ID_juego"];
     
-    // console.log(getUrlVars()["ID_juego"]);
-    
-    
     peticion_http.onreadystatechange = mostrar;
     
     peticion_http.open('GET', url + "?" + "IDjuego="+ID_juego +"&"+ "puntuacion="+puntuacion, true);
-    peticion_http.send();
+    
     
 }
 
 function mostrar() {
     if(peticion_http.readyState == 4 && peticion_http.status == 200) {
-        console.log(peticion_http.responseText);
+        //lugar para posible funcionalidad 
+        //console.log(peticion_http.responseText);
     }
 }
 
 
 function getUrlVars() {
     // https://html-online.com/articles/get-url-parameters-javascript/
+    //pasa los parametros de la url a un array clave-valor
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
         vars[key] = value;
@@ -41,4 +40,4 @@ function getUrlVars() {
 }
 
 
-document.addEventListener("DOMContentLoaded", cargar, false);
+//document.addEventListener("DOMContentLoaded", cargar, false);
