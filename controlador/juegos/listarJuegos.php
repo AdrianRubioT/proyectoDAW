@@ -1,6 +1,6 @@
 <?php
 
-    $numElementos = 8;
+    $numElementos = 4;
     
     //inicializar variable si no se especifica
     $pagina = 1;
@@ -13,9 +13,7 @@
     
     
     $listaJuegos = obtenerListadoJuegos($pagina - 1, $numElementos);
-  ?>    
-    <div id="grid-row">
-         <?php    
+
             //sacar las variables para la vista
             foreach ($listaJuegos as $key => $value){
                 $ID_juego = $value["ID"];
@@ -24,10 +22,9 @@
                 $nombreJuego = $value["Nombre"];
                 $categoria = "";
                 $fav = "";
-          
-                
+
                 include("vista/juegos/juego.php");
             }
         
     ?>
-    </div>
+    
