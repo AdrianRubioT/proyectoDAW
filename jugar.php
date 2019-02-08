@@ -11,7 +11,7 @@
         <?php require("vista/head.php")?>
         
         <link rel="stylesheet" type="text/css" media="screen" href="styles/tablero.css" />
-        
+        <script src="scripts/puntuaciones.js"></script>
         <?php require("controlador/jugar/headJugar.php")?>
         
     </head>
