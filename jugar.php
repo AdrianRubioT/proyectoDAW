@@ -1,23 +1,37 @@
 
+<?php require_once("controlador/user/usuario.php"); ?>
+<?php require_once("controlador/cookies/cookies.php");  ?>
+<?php require_once("modelo/DB/consultasMSQL.php"); ?>
+<?php require_once("controlador/user/sesion/login.php"); ?>
+
+
+
 <html>
     <head>
-        <?php require_once("vista/head.php")?>
-        <?php require_once("controlador/jugar/headjugar.php")?>
+        <?php require("vista/head.php")?>
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="styles/tablero.css" />
+        
+        <?php require("controlador/jugar/headJugar.php")?>
         
     </head>
     
     <body>
         
         <!--menu-->
-        <?php require_once("vista/menu/menu.php")?>
+        <?php require("vista/menu/menu.php")?>
         
         
         <!--zona de juego-->
-        <?php require_once("vista/jugar/tablero.html")?>
+        <section id="tablero">
+            <?php require("controlador/jugar/tablero.php")?>
+        </section>
+        
         
         <!--puntuaciones-->
-        <?php //require_once("controlador/jugar/puntuaciones.php")?>
-        
+        <section id="puntuaciones">
+            <?php //require_once("controlador/puntuaciones/puntuaciones.php")?>
+        </section>
         
         
         
