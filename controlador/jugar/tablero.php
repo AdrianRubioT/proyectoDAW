@@ -5,7 +5,6 @@
     
         if(file_exists('contenido/'. $_GET["ID_juego"] ."/index.html")){
             
-            echo "juego encontrado";
             include('contenido/'. $_GET["ID_juego"] ."/index.html");
             
         } else {
