@@ -5,12 +5,12 @@ var peticion_http = new XMLHttpRequest();
 //console.log(window.location.host);
 var ip = window.location.host;
 //var ip = "18.224.32.38";
-var url = "http://"+ip+"/proyectoDAW/funciones/guardarPuntuacion.php";
+var url = "http://"+ip+"/proyectoDAW/guardarPuntuacion.php";
 
-function cargar(){
-    enviarPuntuacion(4);
-    //console.log("enviado");
-}
+// function cargar(){
+//     enviarPuntuacion(4);
+//     //console.log("enviado");
+// }
 
 
 
@@ -29,7 +29,12 @@ function mostrar() {
     //console.log(peticion_http.readyState);
     if(peticion_http.readyState == 4 && peticion_http.status == 200) {
         //lugar para posible funcionalidad 
-        console.log(peticion_http.responseText);
+        
+        if(peticion_http.responseText != ""){
+            alert(peticion_http.responseText);
+        }
+        
+        //console.log(peticion_http.responseText);
         // console.log("respuesta");
     }
 }
@@ -46,4 +51,4 @@ function getUrlVars() {
 }
 
 
-document.addEventListener("DOMContentLoaded", cargar, false);
+//document.addEventListener("DOMContentLoaded", cargar, false);

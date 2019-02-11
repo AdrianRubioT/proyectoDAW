@@ -1,7 +1,7 @@
 <?php
 
-    require("../controlador/user/usuario.php");
-    require_once("../modelo/DB/consultasMSQL.php");
+    require("controlador/user/usuario.php");
+    require_once("modelo/DB/consultasMSQL.php");
     
     // echo "php: recivido";
     // echo $_GET["IDjuego"];
@@ -15,11 +15,11 @@
         //echo $usuario->getUser();
         
         guardarPuntuacion($_GET["IDjuego"], $_GET["puntuacion"] ,$usuario->getCorreo() );
+        echo "Puntuacion registrada";
         
-        
+    }else{
+        echo "Inicie sesion por favor";
     }
-
-    
     // echo "terminado";
 
 ?>
