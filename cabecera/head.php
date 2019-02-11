@@ -5,11 +5,11 @@
 
 
 <!--<script src="main.js"></script>-->
-<link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="styles/menu.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="styles/listarJuegos.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="styles/paginacion.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="styles/juego.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/main.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/menu.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/listarJuegos.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/paginacion.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/juego.css" />
 
 
 
