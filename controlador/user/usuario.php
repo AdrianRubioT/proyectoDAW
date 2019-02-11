@@ -42,7 +42,7 @@
     }
 
 function usuarioVacio(){
-    return new usuario("a","a",false);
+    return new usuario("","",false);
 }
 
 
