@@ -1,1 +1,0 @@
-<p><?php echo $pag_aux ?></p>

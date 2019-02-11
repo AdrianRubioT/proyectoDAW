@@ -13,9 +13,13 @@
         //requiere la clase de usuario para el unserialize
         $usuario = unserialize($_SESSION["usuario"]);
         //echo $usuario->getUser();
+        
+        guardarPuntuacion($_GET["IDjuego"], $_GET["puntuacion"] ,$usuario->getCorreo() );
+        
+        
     }
 
-    guardarPuntuacion($_GET["IDjuego"], $_GET["puntuacion"] ,$usuario->getCorreo() );
+    
     // echo "terminado";
 
 ?>
