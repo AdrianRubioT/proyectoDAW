@@ -1,10 +1,12 @@
+<?php require_once("cabecera/imports.php")  ?>
+
 <html>
     <head>
-        <?php require("vista/head.php")?>
+        <?php require("cabecera/head.php")  ?>
         
-        <link rel="stylesheet" type="text/css" media="screen" href="styles/tablero.css" />
-        <script src="scripts/puntuaciones.js"></script>
-        <?php require("controlador/jugar/headJugar.php")?>
+        <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/tablero.css" />
+        <script src="cabecera/scripts/puntuaciones.js"></script>
+        <?php require("cabecera/headJugar.php")?>
         
     </head>
     

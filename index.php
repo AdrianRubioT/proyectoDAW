@@ -1,6 +1,9 @@
+
+<?php require_once("cabecera/imports.php")  ?>
+
 <html>
     <head>
-        <?php require_once("vista/head.php")  ?>
+        <?php require_once("cabecera/head.php")  ?>
     </head>
     
     <body>
@@ -11,14 +14,14 @@
         
         
         <!--listado de juegos-->
-        <div id="grid-row">
-            <?php require_once("controlador/juegos/listarJuegos.php")?>
-        </div>
+        <section id="grid-row">
+            <?php require_once("controlador/listarJuegos.php")?>
+        </section>
         
         <!--paginacion de las paginas -->
-        <div id="paginacion">
-            <?php require("controlador/juegos/paginacion.php"); ?>
-        </div>
+        <section id="paginacion">
+            <?php require("controlador/paginacion.php"); ?>
+        </section>
         
         
     </body>
