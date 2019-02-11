@@ -3,7 +3,7 @@
     
     function guardarPuntuacion($ID_juego, $puntuacion, $usuario){
         
-        require("../modelo/DB/conexion.php");
+        require("modelo/DB/conexion.php");
         
         $consulta = "INSERT INTO puntuaciones (ID_juego, Correo, Puntuacion) VALUES('$ID_juego', '$usuario', '$puntuacion')";
         mysqli_query($conn, $consulta);
