@@ -13,8 +13,9 @@
     function obtenerPuntuaciones($ID_juego, $pagina, $numElementos){
         
         require("modelo/DB/conexion.php");
-        
-        $consulta = "select ID_juego, Nombre, Puntuacion from puntuaciones, usuarios where ID_juegho = '$ID_juego' AND puntuaciones.Correo = usuarios.Correo LIMIT $pagina,$numElementos ";
+
+        // $consulta = "select ID_juego, Nombre, Puntuacion from puntuaciones, usuarios where ID_juegho = '$ID_juego' AND puntuaciones.Correo = usuarios.Correo LIMIT $pagina,$numElementos "; 
+        $consulta = "select Nombre, Puntuacion from puntuaciones, usuarios where puntuaciones.correo = usuarios.correo and puntuaciones.ID_juego = $ID_juego LIMIT $pagina,$numElementos ";
         $result = mysqli_query($conn, $consulta);
     
         if($result != false){
@@ -25,7 +26,6 @@
         
                 while ($fila = mysqli_fetch_array($result)) {
                     
-                    $listado[$contador]["ID_juego"] = $fila["ID_Juego"];
                     $listado[$contador]["Nombre"] = $fila["Nombre"];
                     $listado[$contador]["Puntuacion"] = $fila["Puntuacion"];
                         
