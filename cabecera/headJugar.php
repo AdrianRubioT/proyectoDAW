@@ -13,7 +13,7 @@
             $stileCss ='contenido/'. $_GET["ID_juego"]."/style.css";
             if (file_exists($stileCss)) {
                 include("cabecera/headJuegoCSS.php");
-                echo "hola css";
+                
             }
             
         } else {
