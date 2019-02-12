@@ -1,5 +1,28 @@
 <?php
 
+
+
+
+    function obtenerPuntuacion($ID_juego, $usuario){
+        
+        require("modelo/DB/conexion.php");
+        
+        $consulta = "select Puntuacion from puntuaciones where ID_juego='$ID_juego' and Correo='$usuario'";
+        $result = mysqli_query($conn, $consulta);
+        
+        $listado = mysqli_fetch_array($result)["Puntuacion"];
+        return $listado;
+        
+    }
+
+    function actualizarPuntuacion($ID_juego, $puntuacion, $usuario){
+        
+        require("modelo/DB/conexion.php");
+        
+        $consulta = "update puntuaciones set Puntuacion=$puntuacion where ID_juego='$ID_juego' and Correo='$usuario'";
+        mysqli_query($conn, $consulta);
+    }
+    
     
     function guardarPuntuacion($ID_juego, $puntuacion, $usuario){
         
