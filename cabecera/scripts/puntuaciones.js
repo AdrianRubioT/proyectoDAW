@@ -2,16 +2,14 @@
 var peticion_http = new XMLHttpRequest();
 
 
-//console.log(window.location.host);
-var ip = window.location.host;
-//var ip = "18.224.32.38";
-var url = "http://"+ip+"/proyectoDAW/guardarPuntuacion.php";
-
-// function cargar(){
-//     enviarPuntuacion(4);
-//     //console.log("enviado");
+// function hola(){
+//     alert ("hola ");
 // }
 
+
+//console.log(window.location.host);
+var ip = window.location.host;
+var url = "http://"+ip+"/proyectoDAW/guardarPuntuacion.php";
 
 
 function enviarPuntuacion(puntuacion){
@@ -51,4 +49,3 @@ function getUrlVars() {
 }
 
 
-//document.addEventListener("DOMContentLoaded", cargar, false);

@@ -1,5 +1,6 @@
 
-alert("hola");
+// require("cabecera/scripts/puntuaciones.js");
+
 var puntos;
 
 function cargar(){
@@ -10,13 +11,14 @@ function cargar(){
     document.getElementById("enviar").addEventListener("clikc", enviar);
 }
 
-function enviar(){
-    //enviarPuntuacion(puntos.innerText);
-}
+// function enviar(){
+//     hola();
+//     //enviarPuntuacion(puntos.innerText);
+// }
 
 function contar(){
-    console.log(puntos);
-    //puntos.innerText;
+    //console.log(puntos);
+    puntos.value++;
     
 }
 
