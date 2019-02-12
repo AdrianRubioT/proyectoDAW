@@ -1,18 +1,19 @@
 <?php
 
-    if(isset($_GET["IDjuego"])){
-    
-        if(file_exists('/paginaWeb/contenido/juego/'. $_GET["IDjuego"])){
+
+    if(isset($_GET["ID_juego"])){
         
-            $scripJuego = '/paginaWeb/contenido/juego/'. $_GET["IDjuego"]."/scrip.js";
-            if (file_exists($scripJuego)) {
+        if(file_exists('contenido/'.$_GET["ID_juego"])){
+            $scripJuego = 'contenido/'. $_GET["ID_juego"]."/script.js";
+            if (file_exists('contenido/'. $_GET["ID_juego"]."/script.js")) {
                 // echo "scrip js encontrado";        
-                include("/vista/jugar/headJuegoJS.php");
+                include("cabecera/headJuegoJS.php");
             }
             
-            $stileCss ='/paginaWeb/contenido/juego/'. $_GET["IDjuego"]."/stile.css";
+            $stileCss ='contenido/'. $_GET["ID_juego"]."/style.css";
             if (file_exists($stileCss)) {
-                include("/vista/jugar/headJuegoCSS.php");
+                include("cabecera/headJuegoCSS.php");
+                echo "hola css";
             }
             
         } else {
