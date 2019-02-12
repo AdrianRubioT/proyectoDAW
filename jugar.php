@@ -24,10 +24,10 @@
         
         <!--puntuaciones-->
         <section id="puntuaciones">
-            <?php //require_once("controlador/puntuaciones/puntuaciones.php")?>
+            <?php require_once("controlador/puntuaciones/puntuaciones.php")?>
         </section>
         
-        
+
         
         
         
