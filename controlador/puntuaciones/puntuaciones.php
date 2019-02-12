@@ -9,7 +9,7 @@
     
     if(isset($_GET["ID_juego"])){
         $listaPuntuacion = obtenerPuntuaciones($_GET["ID_juego"], $pagina, $numElementos);
-        //var_dump($listaPuntuacion);
+        
         crearTablaPuntuaciones($listaPuntuacion);
     }
     
