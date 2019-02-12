@@ -1,25 +1,42 @@
 <?php
+require_once("cabecera/imports.php");
 
-    require("controlador/user/usuario.php");
-    require_once("modelo/DB/consultasMSQL.php");
-    
-    // echo "php: recivido";
     // echo $_GET["IDjuego"];
     // echo $_GET["puntuacion"];
-    // var_dump($_GET);
+    
+    
+    // guardarPuntuacion($_GET["IDjuego"], $_GET["puntuacion"] ,$usuario->getCorreo() );
+    // actualizarPuntuacion($_GET["IDjuego"], $_GET["puntuacion"] ,$usuario->getCorreo() );
+    // echo "tu puntuacion ". obtenerPuntuacion($_GET["IDjuego"] ,$usuario->getCorreo());
 
-    session_start();
+    //session_start();
+    // comprobamos que a iniciado sesion
     if(isset($_SESSION["usuario"])){
         //requiere la clase de usuario para el unserialize
         $usuario = unserialize($_SESSION["usuario"]);
         //echo $usuario->getUser();
         
-        guardarPuntuacion($_GET["IDjuego"], $_GET["puntuacion"] ,$usuario->getCorreo() );
-        echo "Puntuacion registrada";
+        $puntuacionPrevia = obtenerPuntuacion($_GET["IDjuego"] ,$usuario->getCorreo());
+        
+        
+        // comprobamos si exiuste puntuacion anterior
+        if(!is_null($puntuacionPrevia) ){
+            // comprobamos si la nueva puntuacion es mayor
+            if($_GET["puntuacion"] > $puntuacionPrevia){
+                actualizarPuntuacion($_GET["IDjuego"], $_GET["puntuacion"] ,$usuario->getCorreo() );
+                echo "has superado tu puntuacion";
+            }else{
+                echo "no has superado tu anterior puntuacion. sigue intentandolo";
+            }
+        }else{
+            guardarPuntuacion($_GET["IDjuego"], $_GET["puntuacion"] ,$usuario->getCorreo() );
+            echo "Puntuacion registrada";
+        }
+        
         
     }else{
         echo "Inicie sesion por favor";
     }
-    // echo "terminado";
+    
 
 ?>
