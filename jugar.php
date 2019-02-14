@@ -8,6 +8,10 @@
         <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/comentarios.css" />
         <!--<script type="module" src="cabecera/scripts/puntuaciones.js"></script>-->
         <!--<script type="module" src="cabecera/scripts/s.js"></script>-->
+        
+        <script type="module" src="cabecera/scripts/comentarios.js"></script>
+        
+        
         <?php require("cabecera/headJugar.php")?>
         
     </head>
