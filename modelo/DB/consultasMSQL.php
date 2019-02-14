@@ -1,5 +1,30 @@
 <?php
 
+
+    // function guardarComentario($ID_juego, $texto){
+    //     guardarComentario($ID_juego, $texto, null);
+    // }
+    // funcion que guardara el comentario
+    function guardarComentario($ID_juego, $texto, $respuesta, $correo){
+    
+        require("modelo/DB/conexion.php");
+        
+        // insertamos los datos en la tabla
+        $consulta = "INSERT INTO mensages (texto, ID_respuesta) VALUES('$texto', $respuesta)";
+        mysqli_query($conn, $consulta);
+        
+        // conocer el id asignado del insert anterior
+        // http://cambrico.net/30-04-2008/mysql-como-averiguar-el-ultimo-registro-insertado-en-una-tabla
+        $consulta = "select last_insert_id()";
+        $result = mysqli_query($conn, $consulta);
+        $fila = mysqli_fetch_array($result);
+        
+        // insertamos la ubicacion del mensaje
+        $consulta = "INSERT INTO dejanMensages (ID_men, Correo, ID_juego) VALUES('".$fila["0"]."','$correo', '$ID_juego')";
+        mysqli_query($conn, $consulta);
+    }
+
+
     //  funcion que debuelbe los id de respuesta al comentario padre
     function obtenerIDMenRespuesta($ID_menPadre){
         require("modelo/DB/conexion.php");
@@ -137,7 +162,7 @@
         
         require("modelo/DB/conexion.php");
 
-        // $consulta = "select ID_juego, Nombre, Puntuacion from puntuaciones, usuarios where ID_juegho = '$ID_juego' AND puntuaciones.Correo = usuarios.Correo LIMIT $pagina,$numElementos "; 
+        // $consulta = "select ID_juego, Nombre, Puntuacion from puntuaciones, usuarios where ID_juego = '$ID_juego' AND puntuaciones.Correo = usuarios.Correo LIMIT $pagina,$numElementos "; 
         $consulta = "select Nombre, Puntuacion from puntuaciones, usuarios where puntuaciones.correo = usuarios.correo and puntuaciones.ID_juego = $ID_juego LIMIT $pagina,$numElementos ";
         $result = mysqli_query($conn, $consulta);
     
