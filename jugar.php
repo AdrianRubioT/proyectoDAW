@@ -1,10 +1,11 @@
-<?php require_once("cabecera/imports.php")  ?>
+<?php require("cabecera/imports.php")  ?>
 
 <html>
     <head>
         <?php require("cabecera/head.php")  ?>
         
         <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/tablero.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/comentarios.css" />
         <!--<script type="module" src="cabecera/scripts/puntuaciones.js"></script>-->
         <!--<script type="module" src="cabecera/scripts/s.js"></script>-->
         <?php require("cabecera/headJugar.php")?>
@@ -29,7 +30,9 @@
         </section>
         
 
-        
+        <section id="inputComentarios">
+            <?php require_once("controlador/comentarios/inputComentarios.php")?>
+        </section>
         
         
     </body>

@@ -1,6 +1,106 @@
 <?php
 
+    //  funcion que debuelbe los id de respuesta al comentario padre
+    function obtenerIDMenRespuesta($ID_menPadre){
+        require("modelo/DB/conexion.php");
+        
+        $consulta = "select ID_men
+        from mensages
+        where mensages.ID_respuesta = $ID_menPadre
+        ";
+        // LIMIT $pagina, $numElementos";
 
+        $result = mysqli_query($conn, $consulta);
+    
+        if($result != false){
+            if(mysqli_num_rows($result) == 1){
+                
+                $contador = 0;
+                $listado = array();
+        
+                while ($fila = mysqli_fetch_array($result)) {
+                    
+                    $listado[$contador] = $fila["ID_men"];
+                    $contador++;
+                    
+                }
+                return $listado;
+                
+            }else{
+                return null;
+            }
+        }
+    
+    
+    
+    }
+    
+    // funcion que devuelve el nombre y texto de un comentario
+    function obtenerMensage($ID_men){
+        
+                
+        require("modelo/DB/conexion.php");
+        
+        $consulta = "select nombre, texto
+            from usuarios, dejanMensage, mensages 
+            where
+            mensages.ID_men = dejanMensages.ID_men and
+            dejanMensages.correo = usuarios.correo and
+            
+            mensages.ID_men = '$ID_men'";
+
+        $result = mysqli_query($conn, $consulta);
+    
+        if($result != false){
+            if(mysqli_num_rows($result) == 1){
+
+                $listado = array();
+        
+                while ($fila = mysqli_fetch_array($result)) {
+                    
+                    $listado["Nombre"] = $fila["Nombre"];
+                    $listado["texto"] = $fila["texto"];
+                }
+                return $listado;
+                
+            }else{
+                return false;
+            }
+        }
+    }
+
+    // funcion que lista los id de los comentarios de un juego
+    function obtenerMensagesPadreJuegos($ID_juego, $pagina, $numElementos ){
+        
+        require("modelo/DB/conexion.php");
+        
+        $consulta = "
+            select ID_men 
+            from dejanMensages
+            where dejanMensages.ID_men = $ID_juego
+            LIMIT $pagina,$numElementos";
+            
+        $result = mysqli_query($conn, $consulta);
+    
+        if($result != false){
+            if(mysqli_num_rows($result) == 1){
+
+                $contador = 0;
+                $listado = array();
+        
+                while ($fila = mysqli_fetch_array($result)) {
+                    
+                    $listado[$contador] = $fila["ID_men"];
+                    $contador++;
+                }
+                return $listado;
+                
+            }else{
+                return false;
+            }
+        }
+        
+    }
 
 
     function obtenerPuntuacion($ID_juego, $usuario){
