@@ -1,9 +1,7 @@
 <?php
 
 
-    // function guardarComentario($ID_juego, $texto){
-    //     guardarComentario($ID_juego, $texto, null);
-    // }
+
     // funcion que guardara el comentario
     function guardarComentario($ID_juego, $texto, $respuesta, $correo){
     
@@ -31,7 +29,7 @@
         
         $consulta = "select ID_men
         from mensages
-        where mensages.ID_respuesta = $ID_menPadre
+        where mensages.ID_respuesta = '$ID_menPadre'
         ";
         // LIMIT $pagina, $numElementos";
 
@@ -52,7 +50,7 @@
                 return $listado;
                 
             }else{
-                return null;
+                return false;
             }
         }
     
@@ -66,13 +64,7 @@
                 
         require("modelo/DB/conexion.php");
         
-        $consulta = "select nombre, texto
-            from usuarios, dejanMensage, mensages 
-            where
-            mensages.ID_men = dejanMensages.ID_men and
-            dejanMensages.correo = usuarios.correo and
-            
-            mensages.ID_men = '$ID_men'";
+        $consulta = "select Nombre, Texto from usuarios, dejanMensages, mensages where mensages.ID_men = dejanMensages.ID_men and dejanMensages.Correo = usuarios.Correo and mensages.ID_men = '$ID_men'";
 
         $result = mysqli_query($conn, $consulta);
     
@@ -84,7 +76,7 @@
                 while ($fila = mysqli_fetch_array($result)) {
                     
                     $listado["Nombre"] = $fila["Nombre"];
-                    $listado["texto"] = $fila["texto"];
+                    $listado["Texto"] = $fila["Texto"];
                 }
                 return $listado;
                 
@@ -102,29 +94,20 @@
         $consulta = "
             select ID_men 
             from dejanMensages
-            where dejanMensages.ID_men = $ID_juego
+            where dejanMensages.ID_juego = $ID_juego
             LIMIT $pagina,$numElementos";
             
         $result = mysqli_query($conn, $consulta);
-    
-        if($result != false){
-            if(mysqli_num_rows($result) == 1){
 
-                $contador = 0;
-                $listado = array();
-        
-                while ($fila = mysqli_fetch_array($result)) {
-                    
-                    $listado[$contador] = $fila["ID_men"];
-                    $contador++;
-                }
-                return $listado;
-                
-            }else{
-                return false;
-            }
+        $contador = 0;
+        $listado = array();
+
+        while ($fila = mysqli_fetch_array($result)) {
+            
+            $listado[$contador] = $fila["ID_men"];
+            $contador++;
         }
-        
+        return $listado;
     }
 
 
