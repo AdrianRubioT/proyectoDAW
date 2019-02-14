@@ -1,0 +1,22 @@
+<comentarios>
+    
+    
+    <!--grupos de 10 comentarios-->
+    <comentario id>
+        <nombre></nombre>
+        <texto></texto>
+        
+        <comentario id>
+            <nombre></nombre>
+            <texto></texto>
+        </comentario>
+        
+    </comentario>
+  
+  
+    <!--si no hay mas comentarios-->
+    <endComentarios/>
+    <!--si hay comentarios-->
+    <nextPagComentarios pag=x>
+    
+</comentarios>
