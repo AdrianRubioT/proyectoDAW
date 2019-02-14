@@ -11,6 +11,48 @@ var ip = window.location.host;
 var url = "http://"+ip+"/proyectoDAW/obtenerComentarioXML.php";
 
 
+
+
+function cuerporMensage(nombre, texto){
+return `
+<div class="comentario">
+    <input type="hidden" value="" />
+    <div class="nombre">${nombre}</div>
+    <div class="texto">${texto}</div>
+    <button type="button">Responder</button>
+    
+    <div class="respuesta"></div>
+</div>
+ `   
+}
+
+function mostrar() {
+    
+    if(peticion_http.readyState == 4 && peticion_http.status == 200) {
+        //console.log(peticion_http.responseText);
+        
+        var parser = new DOMParser();
+        var xmlDoc = parser.parseFromString(peticion_http.responseText, "text/xml");
+        //console.log(xmlDoc);
+        
+        var listadoComentarios = xmlDoc.getElementsByTagName("comentario");
+        
+        
+        for (var i = 0; i < listadoComentarios.length ; i++ ) {
+            
+            var nombre = listadoComentarios[i].childNodes[0].textContent;
+            var texto = listadoComentarios[i].childNodes[1].textContent;
+            document.getElementById("comentarios").innerHTML += (cuerporMensage(nombre, texto));
+        }
+        
+        console.log(xmlDoc.getElementsByTagName("comentario")[0].childNodes[0]);
+        
+        
+        
+    }
+}
+
+
 function obtenerComentario(){
     
     var ID_juego = getUrlVars()["ID_juego"];
@@ -20,23 +62,6 @@ function obtenerComentario(){
     peticion_http.send(null);
     
 }
-
-
-
-function mostrar() {
-    //console.log(peticion_http.readyState);
-    if(peticion_http.readyState == 4 && peticion_http.status == 200) {
-        //lugar para posible funcionalidad 
-        console.log(peticion_http.responseText);
-        // alert(peticion_http.responseText);
-        
-        
-        //console.log(peticion_http.responseText);
-        // console.log("respuesta");
-    }
-}
-
-
 
 //pasa los parametros de la url a un array clave-valor
 function getUrlVars() {
