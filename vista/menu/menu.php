@@ -10,11 +10,10 @@
         
         <div id="linea2">
             <!--<div id="categorias"></div>-->
-            <div id="accesoRapido">
-                <a class="enlaceBiblioteca" href="index.php">Inicio</a>
-                <a class="enlaceBiblioteca" href="biblioteca.php">Biblioteca</a>
-                <a class="enlaceBiblioteca" href="biblioteca.php">Categorias</a>
-                <a class="enlaceBiblioteca" href="biblioteca.php">Biblioteca</a>
+            <div id="accesoRapido" class=" botonera">
+                <a class="enlaceBiblioteca boton" href="index.php">Inicio</a>
+                <a class="enlaceBiblioteca boton" href="">Biblioteca</a>
+                <a class="enlaceBiblioteca boton" href="">Categorias</a>
             </div>
         </div>
             
