@@ -23,7 +23,7 @@ return `
     
     <div class="respuesta"></div>
 </div>
- `   
+ `
 }
 
 function mostrar() {
@@ -45,7 +45,7 @@ function mostrar() {
             document.getElementById("comentarios").innerHTML += (cuerporMensage(nombre, texto));
         }
         
-        console.log(xmlDoc.getElementsByTagName("comentario")[0].childNodes[0]);
+        //console.log(xmlDoc.getElementsByTagName("comentario")[0].childNodes[0]);
         
         
         

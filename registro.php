@@ -1,7 +1,9 @@
+<?php require("cabecera/imports.php");  ?>
+
 
 <html>
     <head>
-        <?php require_once("vista/head.php")  ?>
+        <?php require("cabecera/head.php");  ?>
     </head>
     
     <body>
