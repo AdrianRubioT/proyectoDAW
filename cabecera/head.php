@@ -10,9 +10,9 @@
 <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/listarJuegos.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/paginacion.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/juego.css" />
-
-
-
+<link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/tablero.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/comentarios.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/clases.css" />
 
 
 
