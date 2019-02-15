@@ -1,11 +1,15 @@
 
-<p><?php echo "Hola ".$usuario->getUser(); ?></p>
+<div id="usuario">
+    <p class="boton"><?php echo "Hola ".$usuario->getUser(); ?></p>
+</div>
 
-<ul class="desplegable">
-    <li> <p>Opciones de sesion</p>
-        <ul>
-            <li><a id="enlacePerfil" href="perfil.php">perfil</a></li>
-            <li><a id="cerrarSesion" href="controlador/user/sesion/logout.php">cerrar Sesion</a></li>
-        </ul>
-    </li>
-</ul>    
+<div id="opciones">
+    <ul class="desplegable">
+        <li> <p class="boton">Opciones de sesion &darr;</p>
+            <ul>
+                <li><a id="enlacePerfil" class="boton" href="perfil.php">perfil</a></li>
+                <li><a id="cerrarSesion" class="boton" href="controlador/user/sesion/logout.php">cerrar Sesion</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
