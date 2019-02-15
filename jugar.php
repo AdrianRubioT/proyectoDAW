@@ -3,9 +3,7 @@
 <html>
     <head>
         <?php require("cabecera/head.php")  ?>
-        
-        <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/tablero.css" />
-        <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/comentarios.css" />
+
         <!--<script type="module" src="cabecera/scripts/puntuaciones.js"></script>-->
         <!--<script type="module" src="cabecera/scripts/s.js"></script>-->
         
