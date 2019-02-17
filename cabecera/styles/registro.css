@@ -1,0 +1,13 @@
+
+#registro{
+    margin-top:1em;
+    width:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size:2em;
+    border: 1px solid rgba(25,4,4,1);
+    border-radius: 15px;
+}
+
