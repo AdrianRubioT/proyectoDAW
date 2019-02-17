@@ -3,5 +3,38 @@
     float:left;
     margin:10px;
     
-    border:5px solid #2eb9ce;
+    /*border:5px solid #2eb9ce;*/
+}
+
+.dejarComentario, .comentario{
+    border: 0 solid rgba(0,0,0,0.61);
+    border-bottom-width: 2px;
+    border-radius: 10px;
+    padding-bottom:5px;
+    
+}
+
+.comentario .nombre{
+    color: black;
+    font-size:20px;
+    text-overflow: ellipsis;
+}
+
+.comentario{
+    padding-left:15px;
+    min-height:75px;
+    margin-top:5px;
+}
+.nombre, .texto{
+    float:left;
+}
+
+.nombre{
+    min-height:50px;
+    margin-right:25px;
+}
+
+.comentario .boton{
+    float:right;
+    margin-right:3px;
 }

@@ -19,7 +19,7 @@ return `
     <input type="hidden" value="" />
     <div class="nombre">${nombre}</div>
     <div class="texto">${texto}</div>
-    <button type="button">Responder</button>
+    <button class="boton" type="button">Responder</button>
     
     <div class="respuesta"></div>
 </div>
