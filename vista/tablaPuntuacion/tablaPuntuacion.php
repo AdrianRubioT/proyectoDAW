@@ -1,7 +1,7 @@
 <?php
     function crearTablaPuntuaciones($array){
     ?>
-<table>
+<table class="tabla">
     <tr>
         <th>
             Jugador
