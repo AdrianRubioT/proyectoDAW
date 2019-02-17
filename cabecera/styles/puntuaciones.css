@@ -1,0 +1,8 @@
+#puntuaciones{
+    float:left;
+    max-width: 30%;
+    
+    margin-top:10px;
+
+    border:5px solid #00cc00;
+}
