@@ -13,6 +13,8 @@
         
         <?php require_once("vista/registro/formRegistro.php")?>
         
+        
+        
     </body>
     
 </html>
