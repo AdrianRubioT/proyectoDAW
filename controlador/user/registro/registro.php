@@ -4,6 +4,6 @@
 
     insertarUsuario($_POST["regCorreo"], $_POST["regNombre"], $_POST["regPass"]);
 
-    header('location: /');
+    header('location: /proyectoDAW/index.php');
 
 ?>
