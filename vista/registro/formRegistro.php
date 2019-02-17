@@ -1,22 +1,27 @@
 
 
-<section class="registro">
+<section id="registro">
         
-        <h1>Registro</h1>
+    <h1>Registrarse en la pagina</h1>
         
-    <form action="controlador/user/registro/registro.php" method="POST">
+    <form id="formRegistro" action="controlador/user/registro/registro.php" method="POST">
         
-        <label for="regCorreo">Correo</label>
-        <input id="regCorreo" type="text" name="regCorreo"/>
+        <div>
+            <label for="regCorreo">Correo electronico</label>
+            <input class="input" id="regCorreo" type="text" name="regCorreo" placeholder="Correo electronico"/>
+        </div>
         
-        <label for="regNombre">Nombre</label>
-        <input id="regNombre" type="text" name="regNombre"/>
+        <div>
+            <label for="regNombre">Nombre</label>
+            <input class="input" id="regNombre" type="text" name="regNombre" placeholder="¿Como te llamas?"/>
+        </div>
         
-        <label for="regPass">Password</label>
-        <input id="regPass" type="password" name="regPass"/>
+        <div>
+            <label for="regPass">Password</label>
+            <input class="input" id="regPass" type="password" name="regPass" placeholder="No lo pierdas"/>
+        </div>
         
-        
-        <input type="submit" value="Crear cuenta"/>
+        <input class="boton" type="submit" value="Crear cuenta"/>
     </form>
     
 </section >
