@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/tablero.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/comentarios.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/registro.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/puntuaciones.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/clases.css" />
 
 
