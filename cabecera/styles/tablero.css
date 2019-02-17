@@ -1,8 +1,13 @@
 #tablero{
+    height:300px;
+    width:1500px;
+    
+    float:left;
     margin:10px;
     max-width: 60%;
-}
 
-#tablero{
-    border:5px solid #2eb9ce;
+    border: 3px solid rgba(63,63,63,1);
+    border-radius: 0;
+    box-shadow: 0 0 6px 2px rgba(12,2,2,0.81) ;
+        
 }
