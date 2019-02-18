@@ -13,13 +13,13 @@ var url = "http://"+ip+"/proyectoDAW/obtenerComentarioXML.php";
 
 
 
-function cuerporMensage(nombre, texto){
+function cuerporMensage(nombre, texto, id){
 return `
 <div class="comentario">
-    <input type="hidden" value="" />
+    <input type="hidden" value="${id}" />
     <div class="nombre">${nombre}</div>
     <div class="texto">${texto}</div>
-    <button class="boton" type="button">Responder</button>
+    <button class="boton responder" type="button">Responder</button>
     
     <div class="respuesta"></div>
 </div>
@@ -29,7 +29,7 @@ return `
 function mostrar() {
     
     if(peticion_http.readyState == 4 && peticion_http.status == 200) {
-        //console.log(peticion_http.responseText);
+        
         
         var parser = new DOMParser();
         var xmlDoc = parser.parseFromString(peticion_http.responseText, "text/xml");
@@ -40,9 +40,20 @@ function mostrar() {
         
         for (var i = 0; i < listadoComentarios.length ; i++ ) {
             
-            var nombre = listadoComentarios[i].childNodes[0].textContent;
-            var texto = listadoComentarios[i].childNodes[1].textContent;
-            document.getElementById("comentarios").innerHTML += (cuerporMensage(nombre, texto));
+            var id = listadoComentarios[i].childNodes[0].textContent;
+            var nombre = listadoComentarios[i].childNodes[1].textContent;
+            var texto = listadoComentarios[i].childNodes[2].textContent;
+            
+            document.getElementById("comentarios").innerHTML += (cuerporMensage(nombre, texto, id));
+        }
+        
+        
+        var botones = document.querySelectorAll(".responder");
+        //console.log(botones);
+        for (var i = 0; i < botones.length ; i++ ) {
+            
+            botones[i].addEventListener("click", mostrarCaja);
+            
         }
         
         //console.log(xmlDoc.getElementsByTagName("comentario")[0].childNodes[0]);
@@ -50,6 +61,11 @@ function mostrar() {
         
         
     }
+}
+
+function mostrarCaja(event){
+    // alert("hola");
+    
 }
 
 
