@@ -64,7 +64,7 @@
                 
         require("modelo/DB/conexion.php");
         
-        $consulta = "select Nombre, Texto from usuarios, dejanMensages, mensages where mensages.ID_men = dejanMensages.ID_men and dejanMensages.Correo = usuarios.Correo and mensages.ID_men = '$ID_men'";
+        $consulta = "select Nombre, Texto, mensages.ID_men from usuarios, dejanMensages, mensages where mensages.ID_men = dejanMensages.ID_men and dejanMensages.Correo = usuarios.Correo and mensages.ID_men = '$ID_men'";
 
         $result = mysqli_query($conn, $consulta);
     
@@ -77,6 +77,7 @@
                     
                     $listado["Nombre"] = $fila["Nombre"];
                     $listado["Texto"] = $fila["Texto"];
+                    $listado["ID_men"] = $fila["ID_men"];
                 }
                 return $listado;
                 
