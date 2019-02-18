@@ -23,6 +23,7 @@ require_once("cabecera/imports.php");
         if(!is_null($puntuacionPrevia) ){
             // comprobamos si la nueva puntuacion es mayor
             if($_GET["puntuacion"] > $puntuacionPrevia){
+                
                 actualizarPuntuacion($_GET["IDjuego"], $_GET["puntuacion"] ,$usuario->getCorreo() );
                 echo "has superado tu puntuacion";
             }else{
