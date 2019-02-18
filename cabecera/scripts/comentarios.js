@@ -26,6 +26,18 @@ return `
  `
 }
 
+function CuerpoRespuesta(id_men){
+return`
+<div class="responder">
+    <form action="guardarComentario.php" method = "GET">
+        <input type="hidden" name="ID_juego" value=${id_men}">
+        <textarea name="textoComentario"> </textarea>
+        <input type="submit" value="Comentar"/>
+    </form>
+</div>
+`
+}
+
 function mostrar() {
     
     if(peticion_http.readyState == 4 && peticion_http.status == 200) {
