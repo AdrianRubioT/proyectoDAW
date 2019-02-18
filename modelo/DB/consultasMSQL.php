@@ -146,28 +146,23 @@
         require("modelo/DB/conexion.php");
 
         // $consulta = "select ID_juego, Nombre, Puntuacion from puntuaciones, usuarios where ID_juego = '$ID_juego' AND puntuaciones.Correo = usuarios.Correo LIMIT $pagina,$numElementos "; 
-        $consulta = "select Nombre, Puntuacion from puntuaciones, usuarios where puntuaciones.correo = usuarios.correo and puntuaciones.ID_juego = $ID_juego LIMIT $pagina,$numElementos ";
+        $consulta = "select Nombre, Puntuacion from puntuaciones, usuarios where puntuaciones.correo = usuarios.correo and puntuaciones.ID_juego = $ID_juego ORDER BY puntuaciones.Puntuacion DESC LIMIT $pagina,$numElementos ";
         $result = mysqli_query($conn, $consulta);
     
         if($result != false){
-            if(mysqli_num_rows($result) == 1){
+
+            $contador = 0;
+            $listado = array();
+    
+            while ($fila = mysqli_fetch_array($result)) {
                 
-                $contador = 0;
-                $listado = array();
-        
-                while ($fila = mysqli_fetch_array($result)) {
+                $listado[$contador]["Nombre"] = $fila["Nombre"];
+                $listado[$contador]["Puntuacion"] = $fila["Puntuacion"];
                     
-                    $listado[$contador]["Nombre"] = $fila["Nombre"];
-                    $listado[$contador]["Puntuacion"] = $fila["Puntuacion"];
-                        
-                    $contador++;
-                    
-                }
-                return $listado;
-                
-            }else{
-                return false;
+                $contador++;
             }
+            return $listado;
+
         }
 
     }    
