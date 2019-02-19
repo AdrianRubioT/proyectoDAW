@@ -64,7 +64,14 @@
                 
         require("modelo/DB/conexion.php");
         
-        $consulta = "select Nombre, Texto, mensages.ID_men from usuarios, dejanMensages, mensages where mensages.ID_men = dejanMensages.ID_men and dejanMensages.Correo = usuarios.Correo and mensages.ID_men = '$ID_men'";
+        $consulta = "
+        select Nombre, Texto, mensages.ID_men , mensages.ID_respuesta
+        from usuarios, dejanMensages, mensages 
+            where 
+            mensages.ID_men = dejanMensages.ID_men and 
+            dejanMensages.Correo = usuarios.Correo and 
+            mensages.ID_men = '$ID_men'
+            ";
 
         $result = mysqli_query($conn, $consulta);
     
@@ -78,6 +85,7 @@
                     $listado["Nombre"] = $fila["Nombre"];
                     $listado["Texto"] = $fila["Texto"];
                     $listado["ID_men"] = $fila["ID_men"];
+                    $listado["ID_respuesta"] = $fila["ID_respuesta"];
                 }
                 return $listado;
                 
@@ -93,9 +101,12 @@
         require("modelo/DB/conexion.php");
         
         $consulta = "
-            select ID_men 
-            from dejanMensages
-            where dejanMensages.ID_juego = $ID_juego
+            select mensages.ID_men 
+            from dejanMensages, mensages
+            where 
+                dejanMensages.ID_juego = $ID_juego and
+                dejanMensages.ID_men = mensages.ID_men and
+                mensages.ID_respuesta IS NULL
             LIMIT $pagina,$numElementos";
             
         $result = mysqli_query($conn, $consulta);
