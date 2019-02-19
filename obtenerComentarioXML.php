@@ -9,7 +9,7 @@ header ("Content-Type: application/xml");
 
         $pagina = 0;
         $numElementos = 5;
-
+    
     $idMensages = obtenerMensagesPadreJuegos($_GET["ID_juego"], $pagina, $numElementos);
     // var_dump($idMensages);
     echo "<comentarios>";
@@ -20,32 +20,29 @@ header ("Content-Type: application/xml");
     
     echo "</comentarios>";
     
-    function imprimirComentario($ID_men){
-        // echo $ID_men;
-        echo "<comentario>";
+function imprimirComentario($ID_men){
+    
+    echo "<comentario>";
 
-        $respuestas = obtenerIDMenRespuesta($ID_men);
-        $comentario = obtenerMensage($ID_men);
-        // var_dump($comentario);
-            echo "<id>";
-            echo $comentario["ID_men"];
-            echo "</id>";
-            echo "<nombre>";
-            echo $comentario["Nombre"];
-            echo "</nombre>";
-            echo "<texto>";
-            echo $comentario["Texto"];
-            echo "</texto>";
-        
-        if($respuestas != false){
-            
-            foreach($respuestas as $key => $value){
-                
-                imprimirComentario($value);
-            }    
+    $respuestas = obtenerIDMenRespuesta($ID_men);
+    $comentario = obtenerMensage($ID_men);
+        echo "<id>";
+        echo $comentario["ID_men"];
+        echo "</id>";
+        echo "<nombre>";
+        echo $comentario["Nombre"];
+        echo "</nombre>";
+        echo "<texto>";
+        echo $comentario["Texto"];
+        echo "</texto>";
+
+    if($respuestas != false){
+        foreach($respuestas as $key => $value){
+            imprimirComentario($value);
         }
-        
-        echo "</comentario>";
     }
+    
+    echo "</comentario>";
+}
     
 ?>
