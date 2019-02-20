@@ -7,7 +7,7 @@
     width:100%;
     display: flex;
     grid-template-columns: 0.5fr 1.5fr;
-    grid-template-rows: 1fr;
+    /*grid-template-rows: 1fr;*/
    
 }
 
@@ -17,10 +17,10 @@
 }
 
 #menu {
-    background-color:#7b7b7b;
+    
     display: grid;
-    /*grid-template-colums: 1fr;*/
-    grid-template-rows: 1fr 0.5fr;
+    grid-template-colums: 1fr;
+    /*grid-template-rows: 1fr 0.5fr;*/
 }
 
 #menu #linea1{

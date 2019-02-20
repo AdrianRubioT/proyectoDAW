@@ -1,4 +1,5 @@
 .juego{
+    background-color:#fff;
     
     min-width:150px;
     width: 20%;
@@ -7,14 +8,22 @@
     flex: 0 0 auto;
     margin: 5px;
     
-    
     padding: 10px;
     box-sizing: border-box;
     border:solid 1px black;
-    
     display: block;
+    
+    
+    font-size:20px;
+    text-decoration:none;
+    text-align:center;
+    box-shadow: 10px 10px 12px 0px rgba(0,0,0,0.75);
+    border-radius: 10px 10px 10px 10px;
 }
 
+a {
+    text-decoration:none;
+}
 
 .juego img{
     width:100%;

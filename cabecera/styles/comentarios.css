@@ -2,12 +2,22 @@
     width:90%;
     float:left;
     margin:10px;
-    
-    /*border:5px solid #2eb9ce;*/
+    /*background-color:#fff;*/
+}
+
+#comentarios{
+    /*background-color:#fff;*/
+    float: none;
+    width:100%;
+    /*display: grid;*/
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+    /*grid-template-rows: 1fr 1fr;*/
+    /*grid-template-areas: "usuario texto responder" "respuesta respuesta respuesta";*/
 }
 
 .dejarComentario, .comentario{
     border: 0 solid rgba(0,0,0,0.61);
+    border-left-width: 2px;
     border-bottom-width: 2px;
     border-radius: 10px;
     padding-bottom:5px;
@@ -20,21 +30,37 @@
     text-overflow: ellipsis;
 }
 
+
+
 .comentario{
-    padding-left:15px;
-    min-height:75px;
+    
+    
+    /*border:5px solid #2eb9ce;*/
+    /*float: none;*/
+    width: 90%;
+    padding-left:25px;
+    /*min-height:75px;*/
+    height: auto;
     margin-top:5px;
 }
 .nombre, .texto{
+    /*float:left;*/
+    width: 80%;
+}
+
+.texto{
     float:left;
+    margin-left:20px;
 }
 
 .nombre{
-    min-height:50px;
-    margin-right:25px;
+    float:left;
+    width:auto;
+    /*min-height:75px;*/
+    /*margin-right:25px;*/
 }
 
-.comentario .boton{
-    float:right;
-    margin-right:3px;
+.comentario > .boton{
+    /*float:right;*/
+    /*margin-right:3px;*/
 }
