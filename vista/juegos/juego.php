@@ -5,6 +5,7 @@
     
         <div class="iconoJuego">
             <img src="contenido/<?php echo $ID_juego ."/". $imgJuego ?>">
+            <!--<img src="https://source.unsplash.com/random/400x400/"/>-->
         </div>
         
         <div class="nombreJuego">
