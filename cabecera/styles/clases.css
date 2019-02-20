@@ -92,10 +92,14 @@
 
 /* https://divtable.com/table-styler/ */
 .tabla {
+    color: #000;
     width:200px;
     border-collapse: collapse;
     border: 2px solid #A4615E;
     text-align: center;
+    background: #6B5444;
+    background: linear-gradient(to bottom, #907f73 0%, #796556 66%, #6B5444 100%);
+    border-bottom: 3px solid #444444;
 }
 .tabla td, .tabla th {
     border: 1px solid #AA2222;
@@ -106,14 +110,8 @@
 .tabla tr:nth-child(even) {
     background: #D0A667;
 }
-.tabla thead {
-    background: #6B5444;
-    background: linear-gradient(to bottom, #907f73 0%, #796556 66%, #6B5444 100%);
-    border-bottom: 3px solid #444444;
-}
-.tabla thead th {
+.tabla th {
     font-weight: bold;
-    color: #000;
     text-align: center;
 }
 
