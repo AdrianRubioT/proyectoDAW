@@ -36,7 +36,7 @@
         $result = mysqli_query($conn, $consulta);
     
         if($result != false){
-            if(mysqli_num_rows($result) == 1){
+            //if(mysqli_num_rows($result) == 1){
                 
                 $contador = 0;
                 $listado = array();
@@ -49,12 +49,10 @@
                 }
                 return $listado;
                 
-            }else{
-                return false;
-            }
+            //}
+        }else{
+            return false;
         }
-    
-    
     
     }
     
@@ -65,7 +63,7 @@
         require("modelo/DB/conexion.php");
         
         $consulta = "
-        select Nombre, Texto, mensages.ID_men , mensages.ID_respuesta
+        select Nombre, Texto, mensages.ID_men
         from usuarios, dejanMensages, mensages 
             where 
             mensages.ID_men = dejanMensages.ID_men and 
@@ -85,7 +83,8 @@
                     $listado["Nombre"] = $fila["Nombre"];
                     $listado["Texto"] = $fila["Texto"];
                     $listado["ID_men"] = $fila["ID_men"];
-                    $listado["ID_respuesta"] = $fila["ID_respuesta"];
+                    //$listado["ID_respuesta"] = $fila["ID_respuesta"];
+                    //echo "HOLA-------" .$fila["ID_respuesta"];
                 }
                 return $listado;
                 

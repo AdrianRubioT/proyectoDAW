@@ -14,7 +14,10 @@ header ("Content-Type: application/xml");
     // var_dump($idMensages);
     echo "<comentarios>";
     
+    // debugArray($idMensages);
+    
     foreach($idMensages as $key => $value){
+        // debugArray($idMensages);
         imprimirComentario($value);
     }
     
@@ -25,7 +28,9 @@ function imprimirComentario($ID_men){
     echo "<comentario>";
 
     $respuestas = obtenerIDMenRespuesta($ID_men);
+    //($respuestas);
     $comentario = obtenerMensage($ID_men);
+    //debugArray($comentario);
         echo "<id>";
         echo $comentario["ID_men"];
         echo "</id>";
@@ -44,5 +49,17 @@ function imprimirComentario($ID_men){
     
     echo "</comentario>";
 }
+    
+    function debugArray($myarray){
+        if($myarray != false){
+        
+        foreach($myarray as $num => $value){
+    	echo " -b ". $num." TIENE ". $value." d- ";
+        }
+        echo "------------";
+        }else{
+            echo "VALOR FALSO";
+        }
+    }
     
 ?>
