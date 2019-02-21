@@ -2,7 +2,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>ejemplo menu</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<link rel="icon" type="image/svg+xml" href="favicon.png" sizes="any">
 
 <!--<script src="main.js"></script>-->
 <link rel="stylesheet" type="text/css" media="screen" href="cabecera/styles/main.css" />
