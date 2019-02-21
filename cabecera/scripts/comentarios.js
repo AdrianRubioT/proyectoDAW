@@ -34,6 +34,7 @@ function cuerporMensage(comentarioXML){
     <div class="nombre">${nombre}</div>
     <div class="texto">${texto}</div>
     <button class="boton responder" type="button">Responder</button>
+    <div class="responder"></div>
     <div class="respuesta">`;
 
     for (var i = 0; i<respuestas.length; i++ ) {
@@ -88,13 +89,13 @@ function mostrarCaja(event){
     //console.log(event.target.parentElement.childNodes);
     
     // div que esta para contener el bloque de responder
-    var divRespuesta = event.target.parentElement.childNodes[9];
+    var divResponder = event.target.parentElement.childNodes[9];
     
     // var con el id del input hiden del cometario;
     var idPadre = event.target.parentElement.childNodes[1].value;
     
     // aniadir el bloque para responder al mensage
-    divRespuesta.innerHTML = CuerpoRespuesta(idPadre, GET["ID_juego"]);
+    divResponder.innerHTML = CuerpoRespuesta(idPadre, GET["ID_juego"]);
     
     // TODO aniadir la funcion de quitar el bloque de respuesta
     var botonesCerrar = document.querySelectorAll(".cerrar");
@@ -108,8 +109,8 @@ function mostrarCaja(event){
 
 
 function cerrarResponder(event){
-    //console.log(event.target.parentNode.parentNode);
-    event.target.parentNode.parentNode.innerText="";
+    //console.log(event.target.parentNode);
+    event.target.parentNode.innerText="";
 }
 
 function CuerpoRespuesta(id_padre, id_juego){
