@@ -17,25 +17,16 @@ var url = "http://"+ip+"/proyectoDAW/obtenerComentarioXML.php";
 
 
 
-function CuerpoRespuesta(id_padre, id_juego){
-return`
-<div class="responder">
-    <button class="boton cerrar" type="button">cerrar</button>
-    <form action="guardarComentario.php" method = "GET">
-        <input type="hidden" name="ID_juego" value="${id_juego}">
-        <input type="hidden" name="ID_padre" value="${id_padre}">
-        <textarea name="textoComentario"></textarea>
-        <input type="submit" value="Comentar"/>
-    </form>
-</div>
-`
-}
+
 
 function cuerporMensage(comentarioXML){
-    // console.log(comentarioXML);
+    //console.log(comentarioXML);
+   
+    //console.log(comentarioXML.querySelectorAll('comentario'));
     var id = comentarioXML.childNodes[0].textContent;
     var nombre = comentarioXML.childNodes[1].textContent;
     var texto = comentarioXML.childNodes[2].textContent;
+    var respuestas = obtenerRespuestas(comentarioXML);
     
     var out = `
 <div class="comentario">
@@ -44,15 +35,29 @@ function cuerporMensage(comentarioXML){
     <div class="texto">${texto}</div>
     <button class="boton responder" type="button">Responder</button>
     <div class="respuesta">`;
-    
-    if (comentarioXML.childNodes[3] != null) {
-        out += cuerporMensage(comentarioXML.childNodes[3]);
+
+    for (var i = 0; i<respuestas.length; i++ ) {
+        out += cuerporMensage(respuestas[i]);
     }
+
     out += 
     `</div>
 </div>`;
     
 return out;
+}
+
+
+function obtenerRespuestas(comentario){
+    // console.log(comentario);
+    var out = new Array();
+    for (var i = 0; i < comentario.childNodes.length; i++ ) {
+        
+        if (comentario.childNodes[i].tagName == "comentario") {
+            out.push(comentario.childNodes[i]);
+        }
+    }
+    return out;
 }
 
 function mostrar() {
@@ -61,13 +66,10 @@ function mostrar() {
         
         var parser = new DOMParser();
         var xmlDoc = parser.parseFromString(peticion_http.responseText, "text/xml");
-        // console.log(xmlDoc.childNodes[0].childNodes);
         
-        var listadoComentarios = xmlDoc.childNodes[0].childNodes;
+        var listadoComentarios = xmlDoc.childNodes[0].childNodes
         
         for (var i = 0; i < listadoComentarios.length ; i++ ) {
-            
-
             
             document.getElementById("comentarios").innerHTML += (cuerporMensage(listadoComentarios[i]));
         }
@@ -77,16 +79,13 @@ function mostrar() {
         for (var i = 0; i < botones.length ; i++ ) {
             
             botones[i].addEventListener("click", mostrarCaja);
-            
         }
-        
-        //console.log(xmlDoc.getElementsByTagName("comentario")[0].childNodes[0]);
         
     }
 }
 
 function mostrarCaja(event){
-    // console.log(event.target.parentElement.childNodes);
+    //console.log(event.target.parentElement.childNodes);
     
     // div que esta para contener el bloque de responder
     var divRespuesta = event.target.parentElement.childNodes[9];
@@ -99,7 +98,20 @@ function mostrarCaja(event){
     
     // TODO aniadir la funcion de quitar el bloque de respuesta
     
-    
+}
+
+function CuerpoRespuesta(id_padre, id_juego){
+return`
+<div class="responder">
+    <button class="boton cerrar" type="button">cerrar</button>
+    <form action="guardarComentario.php" method = "GET">
+        <input type="hidden" name="ID_juego" value="${id_juego}">
+        <input type="hidden" name="ID_padre" value="${id_padre}">
+        <textarea name="textoComentario"></textarea>
+        <input type="submit" value="Comentar"/>
+    </form>
+</div>
+`
 }
 
 
