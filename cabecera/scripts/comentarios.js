@@ -97,7 +97,19 @@ function mostrarCaja(event){
     divRespuesta.innerHTML = CuerpoRespuesta(idPadre, GET["ID_juego"]);
     
     // TODO aniadir la funcion de quitar el bloque de respuesta
+    var botonesCerrar = document.querySelectorAll(".cerrar");
+    //console.log(botones);
+    for (var i = 0; i < botonesCerrar.length ; i++ ) {
+        botonesCerrar[i].addEventListener("click", cerrarResponder);
+    }
     
+    
+}
+
+
+function cerrarResponder(event){
+    //console.log(event.target.parentNode.parentNode);
+    event.target.parentNode.parentNode.innerText="";
 }
 
 function CuerpoRespuesta(id_padre, id_juego){
